@@ -1,0 +1,5 @@
+es:
+  name: "Nombre"
+  address: "direccion"
+  phone: "Telefono"
+  delete: "Eliminar"

@@ -1,0 +1,50 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		Estas en Administrar clinicas
+	</div>
+	<div class="panel-boddy">
+		<div class="row">
+			<div class="col-md-12">
+			<table>
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nombre</th>
+						<th>dirección</th>
+						<th>Telefono</th>
+						<th>Eliminar</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%@clinics.each do |clinic|%>
+					<tr>
+						<td><%=clinic.id%></td>
+						<td><%=clinic.name%></td>
+						<td><%=clinic.address%></td>
+						<td><%=clinic.phone%></td>
+						<td><%=link_to "bb", delete_clinic_path(clinic.id),method: 'delete'%></td>
+					</tr>
+					<%end%>
+				</tbody>
+			</table>
+			</div>
+			<%=form_for @clinic do |f|%>
+			<div class="col-md-3">
+				<%=t :name%>
+				<%=f.text_field :name%>
+			</div>
+			<div class="col-md-3">
+				<%=t :address%>
+				<%=f.text_field :address%>
+			</div>
+			<div class="col-md-3">
+				<%=t :phone%>
+				<%=f.text_field :phone%>
+			</div>
+			<div class="col-md-3">
+				<%=submit_tag%>
+			</div>
+			<%end%>
+		</div>
+	</div>
+</div>
